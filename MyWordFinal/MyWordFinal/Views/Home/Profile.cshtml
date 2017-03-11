@@ -1,0 +1,17 @@
+﻿@model MyWordFinal.Models.ViewProfile
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h2>Profile</h2>
+<h2>My profile</h2>
+<div class="col-md-6 profile-cards">
+    <div class="thumbnail">
+        <p>
+            Display Name: @Model.DisplayName<br />
+            Email:@Model.Email<br />
+            Comments: @Model.Comment<br />
+            
+        </p>
+    </div>
+</div>

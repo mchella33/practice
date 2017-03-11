@@ -1,0 +1,54 @@
+﻿@model FurryTry2.Models.AppUser
+@{
+    ViewBag.Title = "Log in or Register";
+}
+
+<h2>Login or Register Here</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Login</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RememberMe)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RememberMe)
+            @Html.ValidationMessageFor(model => model.RememberMe)
+        </div>
+
+        <p>
+            <input type="submit" value="Sign In" />
+        </p>
+    </fieldset>
+    <div>
+        @Html.ActionLink("Register New User", "Register")
+    </div>
+
+
+
+@*<div>
+    @Html.ActionLink("Home", "Index")
+</div>*@
+  @*saving for later in case I need to add*@
+@*@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")*@
+}

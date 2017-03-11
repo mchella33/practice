@@ -1,0 +1,25 @@
+﻿@model FurryTry2.Models.InteractiveProfileViewModel
+@{
+    ViewBag.Title = "InteractiveProfile";
+}
+@foreach (var shareable in Model.Shareables)
+{
+
+    <div class="col-md-6 profile-cards">
+        <div class="thumbnail">
+
+            <p>
+
+                @Model.Profile<hr />
+                @Model.Shareables<hr />
+
+            </p>
+
+
+
+        </div>
+
+    </div>
+
+
+}

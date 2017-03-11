@@ -1,0 +1,45 @@
+﻿@model IEnumerable<GardenChocolates.Product>
+@{
+    ViewBag.Title = "Cart";
+}
+
+
+@foreach (var product in Model)
+{
+ 
+
+    <div class="col-md-2 card">
+        <input type="button" value="Add To Cart" onclick="AddToCartButtonClicked(@product.ProductId);" />
+        <button id="AddButton" value="@product.ProductId">Add to Cart</button>
+        <p>@product.PriceEach</p>
+        <p>@product.Description</p>
+
+    </div>
+}
+<script>
+
+    @*var AddToCartButtonClicked = funtion(int 'id')
+    {
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("AddToCart", "Index")',
+            data: { id },
+            beforeSend:function(){
+                // this is where we append a loading image
+
+            },
+            success:function(data){
+                // successful request; do something with the data
+
+            },
+            error:function(){
+                // failed request; give feedback to user
+
+
+    }*@
+
+
+
+
+
+</script>

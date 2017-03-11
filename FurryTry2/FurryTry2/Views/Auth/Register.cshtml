@@ -1,0 +1,137 @@
+﻿@using FurryTry2.Models 
+@model FurryTry2.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Login</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserName)
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RepeatPassword)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RepeatPassword)
+            @Html.ValidationMessageFor(model => model.RepeatPassword)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RememberMe)
+        </div>
+        <div class="editor-field">
+            @Html.CheckBoxFor(m => m.RememberMe)
+            @Html.ValidationMessageFor(model => model.RememberMe)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FirstName)
+            @Html.ValidationMessageFor(model => model.FirstName)
+        </div>
+        <div class="editor-label">
+            @Html.Label("Birth Date")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Year, Enumerable.Range(1920, DateTime.Now.Year - 30).Select(x => new SelectListItem { Value = x.ToString(), Text = x.ToString() }), "-- Year --")
+            @Html.DropDownListFor(model => model.Month, Enumerable.Range(1, 12).Select(i => new SelectListItem { Value = i.ToString(), Text = System.Globalization.CultureInfo.InvariantCulture.DateTimeFormat.GetMonthName(i) }), "-- Month --")
+            @Html.DropDownListFor(model => model.Day, Enumerable.Range(1, 31).Select(i => new SelectListItem { Value = i.ToString(), Text = i.ToString() }), "-- Day --")
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AboutMe)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AboutMe)
+            @Html.ValidationMessageFor(model => model.AboutMe)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.City)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.City)
+            @Html.ValidationMessageFor(model => model.City)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Country)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Country)
+            @Html.ValidationMessageFor(model => model.Country)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DisplayName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DisplayName)
+            @Html.ValidationMessageFor(model => model.DisplayName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Gender)
+        </div>
+        <div class="editor-field">
+           @Html.DropDownListFor(m => m.Gender,
+                    new SelectList(Enum.GetValues(typeof(Gender))),
+                    "Select Gender")
+            @Html.ValidationMessageFor(model => model.Gender)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GenderSeeking)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.GenderSeeking,
+                    new SelectList(Enum.GetValues(typeof(Gender))),
+                    "Select Gender")
+            @Html.ValidationMessageFor(model => model.GenderSeeking)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.JsonAttributes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.JsonAttributes)
+            @Html.ValidationMessageFor(model => model.JsonAttributes)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Avatar)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Avatar)
+            @Html.ValidationMessageFor(model => model.Avatar)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LastName)
+            @Html.ValidationMessageFor(model => model.LastName)
+        </div>
+       
+        <p>
+            <input type="submit" value="Sign In" />
+        </p>
+    </fieldset>
+
+
+}
+
+<div>
+    @Html.ActionLink("Home", "Index")
+</div>
+

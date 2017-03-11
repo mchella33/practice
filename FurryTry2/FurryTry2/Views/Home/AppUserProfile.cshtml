@@ -1,0 +1,23 @@
+﻿@model FurryTry2.Models.ViewProfile
+    @*//this matches the viewModel named in HomeController*@
+@{
+    ViewBag.Title = "AppUserProfile";
+}
+
+<h2>My profile</h2>
+<div class="col-md-6 profile-cards">
+    <div class="thumbnail">
+        <p>
+            UserName: @Model.DisplayName<hr />
+            @Model.Avatar<hr />
+            Birthday: @Model.Birthdate<hr />
+            Gender: @Model.Gender<hr />
+            Gender Seeking: @Model.GenderSeeking<hr />
+            A little about me: @Model.AboutMe<hr />
+            Current Activity: @Model.JsonAttributes<hr />
+        </p>
+    </div>
+
+
+    </div>
+

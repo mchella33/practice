@@ -1,0 +1,24 @@
+﻿@model FurryTry2.Models.MainPageViewModel
+    @*declaring use of the viewmodel type. this can be any type and accessed below by using@model.It will always match the type coming from the controller*@
+@{
+    ViewBag.Title = "MainPage";
+}
+
+@foreach (var profile in Model.Profiles)
+////'iterate' or goes through the objects in model.profiles
+{
+    <a href="@Url.Action("InteractiveProfile", "Home", new {profileId = profile.ProfileId})">
+        <div class="col-md-2, profile-cards">
+            <div class="caption">
+                <div class="thumbnail">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Otakuthon_2014_(14850728278).jpg/206px-Otakuthon_2014_(14850728278).jpg"/>
+                    <p>
+                    @profile.DisplayName<hr />
+                    @profile.Avatar<hr />
+                    Gender:@profile.Gender <hr />
+                    Gender Seeking:@profile.GenderSeeking<hr />
+                </div>
+            </div>
+        </div>
+    </a>
+}                                       

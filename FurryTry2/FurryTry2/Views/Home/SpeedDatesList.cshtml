@@ -1,0 +1,35 @@
+﻿@using FurryTry2.Entities
+@model List<FurryTry2.Entities.SpeedDate>
+@{
+    ViewBag.Title = "SpeedDatesList";
+}
+
+<h2>SpeedDatesList</h2>
+
+@foreach (var speedDate in Model)
+{
+    <div class="col-md-6 profile-cards">
+        <div class="thumbnail">
+            
+           
+
+            <div class="caption"></div>
+
+            <p>
+                Subject:@speedDate.Title<hr/>
+                Date Time/Description:@speedDate.Description<hr/>
+                Time Posted:@speedDate.PostTime<hr/>
+                City:@speedDate.City<hr/>
+                State:@speedDate.State<hr/>
+                @speedDate.JsonAttributes
+            </p>
+
+
+
+        </div>
+
+    </div>
+
+
+
+}
